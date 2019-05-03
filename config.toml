@@ -28,7 +28,7 @@ pygmentsuseclasses         = true
     name                   = "Blog"
     weight                 = -120
     identifier             = "blog"
-    url                    = "blog/"  
+    url                    = "posts/"  
 
   [[menu.main]]
     name                   = "Resume"
@@ -46,9 +46,9 @@ pygmentsuseclasses         = true
   faviconfile              = "img/favicon.ico"               # from static/
   avatar                   = "img/profile.png"             # path to image in static dir e.g img/avatar.png 
   author                   = "Peter Blum"
-  description              = ["Be a better man.", "Do what you cant.", "Love the world."]           # appears in the site header when set to a non-empty string
-  welcome_head             = "Hello, World!"
-  welcome_word             = "~ No Day But Today ~"
+  description              = ["Be better.", "Do what you can't.", "Love the world."]           # appears in the site header when set to a non-empty string
+  welcome_head             = ""
+  welcome_word             = ""
 
   latestpostscount         = 3                             # how many posts to display on the home page
   bloggroupby              = 'month'
