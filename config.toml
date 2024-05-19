@@ -1,78 +1,102 @@
-baseURL                   = "https://oskoss.github.io"
-builddrafts                = false
-languageCode               = "en"
-canonifyurls               = true
-contentdir                 = "content"
-layoutdir                  = "layouts"
-publishdir                 = "public"
-enableEmoji                = true
-hasCJKLanguage             = false
-summaryLength              = 200
-Paginate                   = 3
+baseURL = "https://oskoss.com"
+languageCode = "en-us"
+title = "Peter Blum"
+theme = "cactus"
+# copyright = "" # cactus will use title if copyright is not set
+# disqusShortname = "example" # Used when comments is enabled. Cactus will use site title if not set
+# googleAnalytics = "UA-1234-5"
 
-theme                      = "AllinOne"
-title                      = "Peter Blum"
+# summaryLength = 2
 
-pygmentsuseclasses         = true
+# Main menu which appears below site header.
+[[menu.main]]
+name = "Home"
+url = "/"
+weight = 1
 
-[permalinks]
-  blog                     = "blog/:year-:month/:slug/"
+[[menu.main]]
+name = "Writings"
+url = "/posts"
+weight = 2
 
-[taxonomies]
-  tag                      = "tags"
-  series                   = "series"
-  category                 = "categories"
+[[menu.main]]
+name = "Fun"
+url = "/fun"
+weight = 3
 
-[menu]
-  [[menu.main]]
-    name                   = "Blog"
-    weight                 = -120
-    identifier             = "blog"
-    url                    = "posts/"  
+# [[menu.main]]
+# name = "About"
+# url = "/about"
+# weight = 4
 
-  [[menu.main]]
-    name                   = "Resume"
-    weight                 = -110
-    identifier             = "resume"
-    url                    = "resume/" 
-
-  [[menu.main]]
-    name                   = "Contact"
-    weight                 = -100
-    identifier             = "contact"
-    url                    = "contact/"  
+[markup]
+[markup.tableOfContents]
+endLevel = 4
+ordered = false
+startLevel = 2
+[markup.highlight]
+codeFences = true
+guessSyntax = false
+hl_Lines = ""
+lineNoStart = 1
+lineNos = true
+lineNumbersInTable = false
+noClasses = true
+style = "dracula"
+tabWidth = 4
 
 [params]
-  faviconfile              = "img/favicon.ico"               # from static/
-  avatar                   = "img/profile.png"             # path to image in static dir e.g img/avatar.png 
-  author                   = "Peter Blum"
-  description              = ["Be better.", "Do what you can't.", "Love the world."]           # appears in the site header when set to a non-empty string
-  welcome_head             = ""
-  welcome_word             = ""
 
-  latestpostscount         = 3                             # how many posts to display on the home page
-  bloggroupby              = 'month'
-  dateform                 = "Jan 2, 2006"
-  dateformfull             = "2006-01-02  Monday  15:04:05"
-  noshowreadtime           = false                         # if true, don't show "<x> minutes read" in posts
+colortheme = "white" # dark, light, white, or classic
+rss = true           # generate rss feed. default value is false
+#googleAnalyticsAsync = true # use asynchronous tracking. Synchronous tracking by default
+showAllPostsArchive = false # default
 
-  # slides
-  slidesDirPath            = "static/img/front-page"    # path to image in local dir (path for hugo)
-  slidesDirPathURL         = "img/front-page"    # path to image in static dir (for static pages)
+# Home page settings
+description = ""
+mainSection = ""                            # your main section
+showAllPostsOnHomePage = false              # default
+postsOnHomePage = 0                         # this option will be ignored if showAllPostsOnHomePage is set to true
+tagsOverview = false                        # show tags overview by default.
+showProjectsList = false                    # show projects list by default (if projects data file exists).
+projectsUrl = "https://github.com/gohugoio" # title link for projects list
 
-  # highlighting 
-  highlightjs              = true
+# https://gohugo.io/functions/format/#hugo-date-and-time-templating-reference
+dateFormat = "2006-01-02" # default
 
-  # latex
-  katex                    = true
+# Post page settings
+show_updated = true # default
+showReadTime = true # default
 
-  # links
-  email                    = "peterblum@outlook.com"
-  github                   = "//github.com/oskoss"
-  linkedin                 = "//linkedin.com/in/pblum/"
-  twitter                  = "//twitter.com/_PBlum" 
-  include_rss              = false                          # include RSS <link> tag in <head> and show RSS icon
+[params.comments]
+enabled = false            # default
+engine = "cactus_comments" # only disqus, utterances, and cactus_comments is supported
+[params.comments.utterances]
+repo = "<github_username>/<github_reponame>"
+label = "hugo-site-name"                     # you can use however you want to label your name in your repo's issues
+theme = "github-light"
+[params.comments.cactuscomments]
+siteName = "your_cactus_comments_sitename" # see https://cactus.chat/ on how to register your site name
+#serverUrl = "" # Defaults to https://matrix.cactus.chat:8448 (Cactus Chat public server)
+#serverName = "" # Defaults to cactus.chat
 
-  # analytics
-  googleAnalytics          = "your-google-analytic-id"
-  logoText = "story.pb"
+# the value of name should be an valid font awesome icon name (brands type)
+# https://fontawesome.com/icons?d=gallery&s=brands
+[[params.social]]
+name = "github"
+link = "https://github.com/oskoss"
+[[params.social]]
+name = "linkedin"
+link = "https://www.linkedin.com/in/pblum/"
+[[params.social]]
+name = "twitter"
+link = "https://twitter.com/_pblum"
+[[params.social]]
+name = "reddit"
+link = "https://www.reddit.com/user/Independent-Air-4151/"
+[[params.social]]
+name = "discord"
+link = "https://discord.com/users/0skoss"
+[[params.social]]
+name = "email"
+link = "peter@atxyall.com"

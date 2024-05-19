@@ -1,24 +1,27 @@
-#!/bin/bash
+#!/bin/sh
 
-echo -e "\033[0;32mDeploying updates to GitPages...\033[0m"
+# if [ "`git status -s`" ]
+# then
+#     echo "The working directory is dirty. Please commit any pending changes."
+#     exit 1;
+# fi
 
-# Build the project.
-hugo # if using a theme, replace with `hugo -t <YOURTHEME>`
+echo "Deleting old publication"
+rm -rf public
 
-# Go To Public folder
+echo "Generating site"
+hugo
+
+echo "Updating master branch"
 cd public
-# Add changes to git.
-git add .
+git init
 
-# Commit changes.
-msg="rebuilding site `date`"
-if [ $# -eq 1 ]
-  then msg="$1"
-fi
-git commit -m "$msg"
+git config --global push.default matching
+git config --global user.email "${GitHubEMail}"
+git config --global user.name "${GitHubUser}"
 
-# Push source and build repos.
-git push origin master
+git add --all .
+git commit -m "Publishing to master (deploy.sh)"
 
-# Come Back up to the Project Root
-cd ..
+echo "Pushing to github"
+git push --quiet --force https://${GitHubKEY}@github.com/${GitHubUser}/${GitHubRepo}.git master
