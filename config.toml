@@ -24,6 +24,10 @@ name = "Fun"
 url = "/fun"
 weight = 3
 
+[[menu.main]]
+name = "Resume"
+url = "https://docs.google.com/document/d/1RTF3O4a_L-CGfVHx9K7cRccrbkOr31M8/edit?usp=sharing&ouid=117175147746375408918&rtpof=true&sd=true"
+weight = 4
 # [[menu.main]]
 # name = "About"
 # url = "/about"
